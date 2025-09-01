@@ -34,7 +34,6 @@ export default function Header() {
         block: 'start',
       });
     }
-    setIsOpen(false);
   };
 
   const navLinks = [

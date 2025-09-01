@@ -22,6 +22,7 @@ const projects = [
     link: "https://i.postimg.cc/rFSJCKVh/Screenshot-2025-09-01-at-11-09-38-PM.png",
     color: "#8f89ff",
     githubLink: "https://github.com/siddharth-m7/portfolio",
+    liveLink: "",
   },
   {
     title: "🚀 Cloud Code Editor",
@@ -31,6 +32,7 @@ const projects = [
     link: "https://i.postimg.cc/J4jPVFY0/Annotation-2025-04-01-204723.png",
     color: "#fff",
     githubLink: "https://github.com/siddharth-m7/Cloud-Code-Editor",
+    liveLink:""
   },
   {
     title: "Book review platform",
