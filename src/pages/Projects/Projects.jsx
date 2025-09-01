@@ -22,7 +22,7 @@ const projects = [
     link: "https://i.postimg.cc/rFSJCKVh/Screenshot-2025-09-01-at-11-09-38-PM.png",
     color: "#8f89ff",
     githubLink: "https://github.com/siddharth-m7/portfolio",
-    liveLink: "",
+    liveLink: "https://siddharth-mishra.vercel.app"
   },
   {
     title: "🚀 Cloud Code Editor",
@@ -99,7 +99,17 @@ export default function Projects() {
   return (
     <ReactLenis root>
       <main className="bg-black" ref={container}>
-        <section className="text-white w-full bg-slate-950">
+        
+        
+        <section className="text-white w-full pt-20 bg-slate-950">
+          <div className="flex flex-col items-center space-y-8">
+            <div className="relative">
+              <h2 className="text-5xl md:text-7xl font-black text-transparent bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-center">
+                Projects
+              </h2>
+              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 blur-3xl rounded-full" />
+            </div>
+          </div>
           {projects.map((project, i) => {
             const targetScale = 1 - (projects.length - i) * 0.05;
             return (

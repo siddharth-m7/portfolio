@@ -71,9 +71,17 @@ const EducationSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent mb-6">
-            Educational Journey
-          </h2>
+        <div className="relative container mx-auto px-6 mt-10">
+          {/* Section header with enhanced effects */}
+          <div className="flex flex-col items-center space-y-8 mb-20">
+            <div className="relative">
+              <h2 className="text-5xl md:text-7xl font-black text-transparent bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-center">
+                Education
+              </h2>
+              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 blur-3xl rounded-full" />
+            </div>
+          </div>
+        </div>
           
         </motion.div>
 
