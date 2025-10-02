@@ -26,6 +26,27 @@ export default function Header() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Scroll listener to update active link based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'skills', 'projects', 'education', 'experience', 'contact'];
+      const scrollPosition = window.scrollY + 100; // Offset for header height
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveLink(sections[i]);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call once to set initial active link
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleSectionClick = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {

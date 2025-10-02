@@ -1,5 +1,5 @@
 import React from "react";
-import { Code2, Activity, Cpu, Layers, Network, Binary } from "lucide-react";
+import { Code2Icon, Code2, Activity, Cpu, Layers, Network, Binary } from "lucide-react";
 
 const ExperienceCard = ({
   title,
@@ -8,44 +8,27 @@ const ExperienceCard = ({
   description,
   icon: Icon,
 }) => (
-  <div className="group relative overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
-    {/* Glass morphism effect */}
-    <div className="absolute inset-0 backdrop-blur-lg bg-white/5 rounded-lg" />
-
-    {/* Animated gradient border */}
-    <div className="absolute -inset-[2px] bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-lg opacity-0 group-hover:opacity-100 animate-gradient-xy transition-all duration-500" />
-
-    <div className="relative bg-gray-900/90 rounded-lg p-8 h-full border border-gray-800/50 shadow-xl backdrop-blur-xl">
-      {/* Floating icon with pulse effect */}
-      <div className="relative mb-6">
-        <div className="absolute -inset-4 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-25 rounded-full blur-xl group-hover:opacity-75 animate-pulse transition-all duration-500" />
-        <Icon className="w-12 h-12 text-cyan-400 relative z-10 transform group-hover:rotate-12 transition-transform duration-300" />
+  <div className="group relative overflow-hidden transform hover:-translate-y-1 transition-all duration-300">
+    <div className="relative bg-gray-900/50 rounded-lg p-6 h-full border border-gray-800/30 hover:border-cyan-400 hover:bg-gray-900/70 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/20">
+      {/* Simple icon */}
+      <div className="mb-4">
+        <Icon className="w-8 h-8 text-gray-400 group-hover:text-cyan-400 transition-colors duration-300" />
       </div>
 
-      {/* Content with improved typography */}
+      {/* Content with colorful highlights */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+        <h3 className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent group-hover:from-cyan-300 group-hover:to-blue-300 transition-all duration-300">
           {title}
         </h3>
-        <div className="flex justify-between items-center text-gray-300">
-          <span className="font-semibold text-blue-400">{company}</span>
-          <span className="text-sm font-mono bg-blue-500/10 px-3 py-1 rounded-full">
+        <div className="flex justify-between items-center">
+          <span className="font-semibold text-emerald-400 group-hover:text-emerald-300 transition-colors duration-300">{company}</span>
+          <span className="text-sm font-medium bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent px-2 py-1 rounded-md border border-purple-400/20 group-hover:border-purple-400/40 transition-all duration-300">
             {period}
           </span>
         </div>
-        <p className="text-gray-300 border-l-4 border-blue-500/50 pl-4 mt-4 leading-relaxed">
+        <p className="text-gray-400 leading-relaxed text-sm group-hover:text-gray-300 transition-colors duration-300">
           {description}
         </p>
-      </div>
-
-      {/* Decorative elements */}
-      <div className="absolute top-4 right-4 w-20 h-20">
-        <div className="absolute top-0 right-0 w-6 h-[2px] bg-cyan-500/50" />
-        <div className="absolute top-0 right-0 w-[2px] h-6 bg-cyan-500/50" />
-      </div>
-      <div className="absolute bottom-4 left-4 w-20 h-20">
-        <div className="absolute bottom-0 left-0 w-6 h-[2px] bg-purple-500/50" />
-        <div className="absolute bottom-0 left-0 w-[2px] h-6 bg-purple-500/50" />
       </div>
     </div>
   </div>
@@ -53,6 +36,14 @@ const ExperienceCard = ({
 
 const ExperienceSection = () => {
   const experiences = [
+    {
+      icon: Code2Icon,
+      title: "Software Engineer Intern",
+      company: "Shree Aanandam",
+      period: "Sep - Nov 2025",
+      description:
+        "Contributed to creation of Database Models and Server side development of HealthCare Application using Node.js and PostgreSQL.",
+    },
     {
       icon: Code2,
       title: "Full Stack Developer Intern",
@@ -101,7 +92,7 @@ const ExperienceSection = () => {
 
           {/* Experience grid with centered layout */}
           <div className="flex justify-center">
-            <div className="max-w-md w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
               {experiences.map((exp, index) => (
                 <ExperienceCard key={index} {...exp} />
               ))}
